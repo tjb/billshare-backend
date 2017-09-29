@@ -7,4 +7,5 @@ interface UserService: UserDetailsService {
 
   fun findById(id: Long): User
 
+  fun create(user: User): User
 }
