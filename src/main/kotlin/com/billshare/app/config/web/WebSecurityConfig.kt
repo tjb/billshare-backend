@@ -18,7 +18,7 @@ class WebSecurityConfig: WebSecurityConfigurerAdapter() {
 
   @Throws(Exception::class)
   override fun configure(web: WebSecurity) {
-    web.ignoring().antMatchers("/user/create", "login")
+    web.ignoring().antMatchers("/user/create", "/user/login")
   }
 
   @Throws(Exception::class)

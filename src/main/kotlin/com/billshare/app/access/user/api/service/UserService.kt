@@ -8,4 +8,7 @@ interface UserService: UserDetailsService {
   fun findById(id: Long): User
 
   fun create(user: User): User
+
+  fun findByEmailAndPassword(email: String, password: String): User?
+
 }

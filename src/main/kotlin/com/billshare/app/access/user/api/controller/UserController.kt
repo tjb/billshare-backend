@@ -28,5 +28,11 @@ class UserController (val userService: UserService) {
     return userService.create(user)
   }
 
+  @PostMapping(value = "/login")
+  @JsonView(UserView.UserSummary::class)
+  fun login(@RequestBody user: User): User? {
+    return userService.findByEmailAndPassword(user.email, user.password)
+  }
+
 
 }
