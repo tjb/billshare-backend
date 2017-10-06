@@ -32,7 +32,7 @@ class WebSecurityConfig: WebSecurityConfigurerAdapter() {
         .disable()
 
 
-    // allow requests when authenticated
+//     allow requests when authenticated
     http.antMatcher("/**")
         .authorizeRequests().anyRequest().authenticated()
   }

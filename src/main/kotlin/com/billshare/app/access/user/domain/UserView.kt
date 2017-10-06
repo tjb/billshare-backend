@@ -7,6 +7,5 @@ class UserView {
 
     interface UserSummary {}
 
-    interface ExtendedUserSummary: UserSummary, BillView.ExtendedBillSummary,
-            PercentageView.PercentageSummary {}
+    interface ExtendedUserSummary: UserSummary, BillView.ExtendedBillSummary {}
 }

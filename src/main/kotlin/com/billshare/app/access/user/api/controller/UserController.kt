@@ -33,6 +33,4 @@ class UserController (val userService: UserService) {
   fun login(@RequestBody user: User): User? {
     return userService.findByEmailAndPassword(user.email, user.password)
   }
-
-
 }
