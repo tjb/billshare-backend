@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 
 @Configuration
 @EnableAuthorizationServer
-class AuthServerConfig(@Value("\${billshare.oauth.tokenTimeout:3600}") var expiration: Int): AuthorizationServerConfigurerAdapter() {
+class AuthServerConfig(@Value("\${billshare.oauth.tokenTimeout:36000}") var expiration: Int): AuthorizationServerConfigurerAdapter() {
 
   @Autowired lateinit var userDetailsService: UserDetailsService
   @Autowired lateinit var authenticationManager: AuthenticationManager

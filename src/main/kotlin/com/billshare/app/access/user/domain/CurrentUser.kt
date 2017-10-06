@@ -54,4 +54,20 @@ class CurrentUser : UserDetails {
   override fun getPassword(): String? {
     return password
   }
+
+  fun getId(): Long? {
+    return id;
+  }
+
+  fun getFirst(): String {
+    return first;
+  }
+
+  fun getLast(): String {
+    return last;
+  }
+
+  fun getEnabled(): Boolean {
+    return enabled;
+  }
 }

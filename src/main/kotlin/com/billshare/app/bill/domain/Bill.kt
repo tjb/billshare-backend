@@ -30,9 +30,9 @@ data class Bill (
         @JsonView(BillView.BillSummary::class)
         val dueDate: Date? = null,
 
-        @ManyToOne
+        @ManyToOne(cascade = arrayOf(CascadeType.ALL), fetch = FetchType.LAZY)
         @JoinColumn(name = "userId")
-        val user: User? = null
+        var user: User? = null
 
 //        @OneToMany
 //        @JoinColumn(name = "bill_id")
