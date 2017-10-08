@@ -1,6 +1,6 @@
 package com.billshare.app.access.user.api.service
 
-import com.billshare.app.IFactory
+import com.billshare.app.Factory
 import com.billshare.app.access.user.domain.User
 import com.billshare.app.access.user.domain.UserRepository
 import com.billshare.app.access.user.domain.toCurrentUser
@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 
 @Service
-class UserServiceImpl(val userRepository: UserRepository, val userFactory: IFactory<User, Void, User>): UserService {
+class UserServiceImpl(val userRepository: UserRepository, val userFactory: Factory<User, Void, User>): UserService {
 
   override fun findById(id: Long): User {
       return userRepository.findById(id)

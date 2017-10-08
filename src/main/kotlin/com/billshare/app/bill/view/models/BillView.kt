@@ -1,4 +1,4 @@
-package com.billshare.app.bill.domain
+package com.billshare.app.bill.view.models
 
 class BillView {
 

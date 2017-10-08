@@ -1,11 +1,10 @@
 package com.billshare.app.bill.domain
 
-import com.billshare.app.percentage.domain.Percentage
 import com.fasterxml.jackson.annotation.JsonView
 import java.util.*
 import javax.persistence.*
 import com.billshare.app.access.user.domain.User;
-import kotlin.collections.ArrayList
+import com.billshare.app.bill.view.models.BillView
 
 @Entity
 @Table(name = "Bills")
@@ -30,7 +29,7 @@ data class Bill (
         @JsonView(BillView.BillSummary::class)
         val dueDate: Date? = null,
 
-        @ManyToOne(cascade = arrayOf(CascadeType.ALL), fetch = FetchType.LAZY)
+        @ManyToOne
         @JoinColumn(name = "userId")
         var user: User? = null
 
@@ -39,4 +38,13 @@ data class Bill (
 //        @JsonView(BillView.ExtendedBillSummary::class)
 //        val percentages: List<Percentage> = ArrayList<Percentage>()
 
+
 )
+//{
+//        override fun toString(): String {
+//                return "Bill [id = " + id +
+//                        ", price = " + price +
+//                        ", name = " + name +
+//                        ", dueDate = " + dueDate
+//        }
+//}

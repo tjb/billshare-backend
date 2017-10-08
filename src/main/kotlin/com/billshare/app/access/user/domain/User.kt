@@ -1,5 +1,6 @@
 package com.billshare.app.access.user.domain
 
+import com.billshare.app.access.user.view.models.UserView
 import com.billshare.app.bill.domain.Bill
 import com.fasterxml.jackson.annotation.JsonView
 import javax.persistence.*
@@ -33,11 +34,19 @@ data class User (
         @JsonView(UserView.UserSummary::class)
         val enabled: Boolean = false,
 
-        @OneToMany(mappedBy = "user", cascade = arrayOf(CascadeType.ALL), fetch = FetchType.EAGER)
-        @JsonView(UserView.ExtendedUserSummary::class)
-        val bills: Set<Bill>? = null
+        @OneToMany(mappedBy = "user")
+        val bills: List<Bill> = emptyList()
 
 )
+//{
+//        override fun toString(): String {
+//                return "Bill [id = " + id +
+//                        ", email = " + email +
+//                        ", first = " + first +
+//                        ", last = " + last +
+//                        ", enabled = " + enabled
+//        }
+//}
 
 // Extension functions
 fun User.toCurrentUser(): CurrentUser {
