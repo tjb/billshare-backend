@@ -2,6 +2,7 @@ package com.billshare.app.access.user.domain
 
 import com.billshare.app.access.user.view.models.UserView
 import com.billshare.app.bill.domain.Bill
+import com.billshare.app.bill.domain.UserBill
 import com.fasterxml.jackson.annotation.JsonView
 import javax.persistence.*
 
@@ -35,9 +36,16 @@ data class User (
         val enabled: Boolean = false,
 
         @OneToMany(mappedBy = "user")
-        val bills: List<Bill> = emptyList()
+        val bills: List<Bill> = emptyList(),
 
-)
+        @OneToMany(mappedBy = "user")
+        val billsOwed: Set<UserBill> = emptySet()
+
+) {
+        override fun toString(): String {
+                return ""
+        }
+}
 
 // Extension functions
 fun User.toCurrentUser(): CurrentUser {

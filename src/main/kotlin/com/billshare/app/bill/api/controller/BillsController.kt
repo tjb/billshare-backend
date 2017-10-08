@@ -5,6 +5,7 @@ import com.billshare.app.access.user.domain.CurrentUser
 import com.billshare.app.access.user.domain.User
 import com.billshare.app.bill.api.service.BillService
 import com.billshare.app.bill.domain.Bill
+import com.billshare.app.bill.domain.UserBill
 import com.billshare.app.bill.view.models.BillView
 import com.billshare.app.bill.view.models.BillViewModel
 import com.fasterxml.jackson.annotation.JsonView
@@ -46,5 +47,11 @@ class BillsController(val billService: BillService, var userFactory: Factory<Cur
       throw BadHttpRequest();
     val savedBill = billService.save(bill)
     return billViewModelFactory.create(savedBill, null)
+  }
+
+  @PostMapping(value= "/{id}/users/{userId}")
+  @JsonView(BillView.BillSummary::class)
+  fun addUser(@PathVariable id: Long, @PathVariable userId: Long, @RequestBody userBill: UserBill) {
+    billService.addUser(id, userId, userBill)
   }
 }
