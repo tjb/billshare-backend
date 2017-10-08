@@ -32,19 +32,4 @@ data class Bill (
         @ManyToOne
         @JoinColumn(name = "userId")
         var user: User? = null
-
-//        @OneToMany
-//        @JoinColumn(name = "bill_id")
-//        @JsonView(BillView.ExtendedBillSummary::class)
-//        val percentages: List<Percentage> = ArrayList<Percentage>()
-
-
 )
-//{
-//        override fun toString(): String {
-//                return "Bill [id = " + id +
-//                        ", price = " + price +
-//                        ", name = " + name +
-//                        ", dueDate = " + dueDate
-//        }
-//}

@@ -38,15 +38,6 @@ data class User (
         val bills: List<Bill> = emptyList()
 
 )
-//{
-//        override fun toString(): String {
-//                return "Bill [id = " + id +
-//                        ", email = " + email +
-//                        ", first = " + first +
-//                        ", last = " + last +
-//                        ", enabled = " + enabled
-//        }
-//}
 
 // Extension functions
 fun User.toCurrentUser(): CurrentUser {
