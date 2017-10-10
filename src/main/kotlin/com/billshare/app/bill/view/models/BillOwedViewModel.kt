@@ -18,6 +18,8 @@ data class BillOwedViewModel(
         val dueDate: Date? = null,
 
         @JsonView(BillView.BillSummary::class)
-        val amountType: BillType? = null
+        val amountType: BillType? = null,
 
+        @JsonView(BillView.BillSummary::class)
+        val billTotal: Double? = null
         )
