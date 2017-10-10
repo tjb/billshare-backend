@@ -1,7 +1,6 @@
 package com.billshare.app.bill.view.models
 
 import com.billshare.app.Factory
-import com.billshare.app.bill.domain.BillType
 import com.billshare.app.bill.domain.UserBill
 import org.springframework.stereotype.Service
 
@@ -14,6 +13,6 @@ class BillOwedViewModelFactory: Factory<UserBill, Void, BillOwedViewModel> {
                 name = source1.bill?.name,
                 dueDate = source1.bill?.dueDate,
                 amount = source1.amount,
-                amountType = BillType.valueOf(source1.amountType.toString()))
+                amountType = source1.amountType)
     }
 }

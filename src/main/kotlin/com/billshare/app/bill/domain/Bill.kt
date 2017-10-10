@@ -27,7 +27,7 @@ data class Bill (
         @JoinColumn(name = "userId")
         var user: User? = null,
 
-        @OneToMany(mappedBy = "bill")
+        @OneToMany(mappedBy = "bill", cascade = arrayOf(CascadeType.ALL))
         var users: Set<UserBill> = emptySet()
 ) {
         override fun toString(): String {
