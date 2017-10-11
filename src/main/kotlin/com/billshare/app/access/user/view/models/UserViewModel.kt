@@ -1,6 +1,7 @@
 package com.billshare.app.access.user.view.models
 
 import com.billshare.app.bill.view.models.BillViewModel
+import com.billshare.app.bill.view.models.BillOwedViewModel
 import com.fasterxml.jackson.annotation.JsonView
 
 data class UserViewModel(
@@ -17,5 +18,8 @@ data class UserViewModel(
         val last: String = "",
 
         @JsonView(UserView.ExtendedUserSummary::class)
-        val bills: List<BillViewModel>? = null
+        val bills: List<BillViewModel>? = null,
+
+        @JsonView(UserView.ExtendedUserSummary::class)
+        val billsOwed: List<BillOwedViewModel>? = null
 )
