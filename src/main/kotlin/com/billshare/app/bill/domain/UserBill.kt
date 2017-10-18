@@ -15,10 +15,6 @@ class UserBill {
         @Column(name = "amount")
         var amount: Double? = null
 
-        @Column(name = "amountType")
-        @Enumerated(EnumType.ORDINAL)
-        var amountType: BillType? = null
-
         @ManyToOne
         @JoinColumn(name = "userId", updatable = false, insertable = false)
         var user: User? = null
@@ -29,11 +25,10 @@ class UserBill {
 
         constructor() {}
 
-        constructor(user: User?, bill: Bill?, amount: Double?, amountType: BillType) {
+        constructor(user: User?, bill: Bill?, amount: Double?) {
                 this.user = user
                 this.bill = bill
                 this.amount = amount
-                this.amountType = amountType
                 this.userBillId = UserBillId(user,  bill)
         }
 

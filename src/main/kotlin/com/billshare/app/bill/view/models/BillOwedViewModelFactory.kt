@@ -13,7 +13,6 @@ class BillOwedViewModelFactory: Factory<UserBill, Void, BillOwedViewModel> {
                 name = source1.bill?.name,
                 dueDate = source1.bill?.dueDate,
                 amount = source1.amount,
-                amountType = source1.amountType,
                 billTotal = source1.bill?.price)
     }
 }

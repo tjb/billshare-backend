@@ -1,6 +1,5 @@
 package com.billshare.app.bill.view.models
 
-import com.billshare.app.bill.domain.BillType
 import com.fasterxml.jackson.annotation.JsonView
 import java.util.*
 
@@ -16,9 +15,6 @@ data class BillOwedViewModel(
 
         @JsonView(BillView.BillSummary::class)
         val dueDate: Date? = null,
-
-        @JsonView(BillView.BillSummary::class)
-        val amountType: BillType? = null,
 
         @JsonView(BillView.BillSummary::class)
         val billTotal: Double? = null
