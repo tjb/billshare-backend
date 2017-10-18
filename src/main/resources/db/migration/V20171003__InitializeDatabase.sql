@@ -22,7 +22,6 @@ CREATE TABLE UserBills(
     userId INT NOT NULL,
     billId INT NOT NULL,
     amount DECIMAL(20,5) NOT NULL,
-    amountType INT NOT NULL,
     PRIMARY KEY (userId, billId),
     FOREIGN KEY (userId) REFERENCES Users(id),
     FOREIGN KEY (billId) REFERENCES Bills(id)
