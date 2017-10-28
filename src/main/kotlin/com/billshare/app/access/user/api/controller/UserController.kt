@@ -25,6 +25,13 @@ class UserController (val userViewModelFactory: Factory<User, Void, UserViewMode
       return userViewModelFactory.create(user, null)
   }
 
+  @GetMapping(value = "/search/{email}")
+  @JsonView(UserView.ExtendedUserSummary::class)
+  fun findByEmail(@PathVariable email: String): UserViewModel {
+    val user = userService.findByEmail(email)
+    return userViewModelFactory.create(user, null)
+  }
+
   @PostMapping(value = "/create")
   @JsonView(UserView.ExtendedUserSummary::class)
   fun create(@RequestBody user: User): UserViewModel {

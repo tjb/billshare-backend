@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service
 
 @Service
 class UserServiceImpl(val userRepository: UserRepository, val userFactory: Factory<User, Void, User>): UserService {
+  override fun findByEmail(email: String): User? {
+    return userRepository.findByEmail(email)
+  }
 
   override fun findById(id: Long): User {
       return userRepository.findById(id)

@@ -11,4 +11,6 @@ interface UserService: UserDetailsService {
 
   fun findByEmailAndPassword(email: String, password: String): User?
 
+  fun findByEmail(email: String): User?
+
 }
